@@ -1,3 +1,7 @@
+This is a repo for official modules for [CompassOSC](https://github.com/Topodic/CompassOSC). These differ from the samples in the software's repository as these have more practical utility.
+
 ### Modules
 
-This is a repo for official modules for [CompassOSC](https://github.com/Topodic/CompassOSC). These differ from the samples in the software's repository as these have more practical utility.
+#### Equipped Gear
+
+Sends `true` or `false` messages when the player has equipped or unequipped a piece of armor (head, body, legs, feet) at an address based on the gear equipped/unequipped, ie `/wearing/diamond_boots`, so your animations should be Toggle Layers named for the gear they should be turned on while wearing, for instance `osc:/wearing/chainmail_helmet`.
