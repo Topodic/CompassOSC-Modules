@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnx2ud4563qn5"]
+
+[ext_resource type="Script" path="res://modules/EquippedGear/EquppedGear.gd" id="1_qgelx"]
+
+[node name="EquppedGear" type="Node"]
+script = ExtResource("1_qgelx")
+module_name = "Wearing Gear"
+module_description = "Sends messages when equipping or unequipping pieces of gear."
+module_version = 1
+module_author = "Topodic"
+module_id = "topodic.wearinggear"
+module_namespace = "/wearing"
+module_git_repo = "https://github.com/Topodic/CompassOSC-Modules"
