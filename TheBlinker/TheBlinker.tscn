@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw45lfau2411a"]
+
+[ext_resource type="Script" path="res://modules/TheBlinker/TheBlinker.gd" id="1_iet6q"]
+[ext_resource type="PackedScene" uid="uid://dnitq7qbnvoke" path="res://modules/TheBlinker/BlinkerControls.tscn" id="2_o5lyb"]
+
+[node name="TheBlinker" type="Node"]
+script = ExtResource("1_iet6q")
+module_name = "The Blinker"
+module_description = "A random blinker for blinky bits, since animating them by hand kinda sucks. (Note the values might not be 100% accurate due to the rate at which the game can receive messages.)"
+module_version = 1
+module_author = "Topodic"
+module_id = "topodic.theblinker"
+module_namespace = "/"
+module_git_repo = "https://github.com/Topodic/CompassOSC-Modules"
+has_config = true
+
+[node name="BlinkerControls" parent="." instance=ExtResource("2_o5lyb")]

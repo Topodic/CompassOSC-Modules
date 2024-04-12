@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnitq7qbnvoke"]
+
+[ext_resource type="Script" path="res://modules/TheBlinker/BlinkerControls.gd" id="1_f5k2b"]
+
+[node name="BlinkerControls" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+script = ExtResource("1_f5k2b")
+control_nodepaths = Array[NodePath]([NodePath("VBoxContainer/BPMContainer/BPM"), NodePath("VBoxContainer/DurationContainer/Duration"), NodePath("VBoxContainer/MinimumContainer/Minimum")])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="BPMContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/BPMContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Blinks Per Minute"
+
+[node name="BPM" type="SpinBox" parent="VBoxContainer/BPMContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+value = 15.0
+
+[node name="DurationContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/DurationContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Blink Duration (Ticks)"
+
+[node name="Duration" type="SpinBox" parent="VBoxContainer/DurationContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+min_value = 1.0
+value = 3.0
+
+[node name="MinimumContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MinimumContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Minimum Gap (Seconds)"
+
+[node name="Minimum" type="SpinBox" parent="VBoxContainer/MinimumContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+min_value = 0.1
+step = 0.1
+value = 0.5
