@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvqqje5s5ucco"]
+
+[ext_resource type="Script" path="res://modules/BasicMotionPhysics/SpringControl.gd" id="1_3oxsp"]
+
+[node name="SpringControl" type="PanelContainer"]
+size_flags_horizontal = 3
+script = ExtResource("1_3oxsp")
+control_nodepaths = Array[NodePath]([NodePath("MarginContainer/ControllerVBox/NamespaceHBox/Identifier"), NodePath("MarginContainer/ControllerVBox/StiffnessHBox/Stiffness"), NodePath("MarginContainer/ControllerVBox/DampingHBox/Damping"), NodePath("MarginContainer/ControllerVBox/MassHBox/Mass")])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="ControllerVBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="NamespaceHBox" type="HBoxContainer" parent="MarginContainer/ControllerVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ControllerVBox/NamespaceHBox"]
+layout_mode = 2
+text = "Identifier:"
+
+[node name="Identifier" type="LineEdit" parent="MarginContainer/ControllerVBox/NamespaceHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+tooltip_text = "This represents what identifier this
+controller will send its messages under. 
+For instance, setting this to \"Cape\" will 
+send messages like \"/phys/acceleration/
+verticalCape\", so you can organize 
+appropriately. (Empty works, but is not
+recommended.)"
+alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/ControllerVBox"]
+layout_mode = 2
+
+[node name="StiffnessHBox" type="HBoxContainer" parent="MarginContainer/ControllerVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ControllerVBox/StiffnessHBox"]
+layout_mode = 2
+text = "Stiffness:"
+
+[node name="Stiffness" type="SpinBox" parent="MarginContainer/ControllerVBox/StiffnessHBox"]
+layout_mode = 2
+size_flags_horizontal = 10
+tooltip_text = "This value sets how \"stiff\" the spring motion
+is, in other words, how hard it tries to return
+to its resting position. As such, higher values
+will make the oscillation faster."
+min_value = 0.001
+max_value = 10.0
+step = 0.001
+value = 0.01
+custom_arrow_step = 0.01
+
+[node name="DampingHBox" type="HBoxContainer" parent="MarginContainer/ControllerVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ControllerVBox/DampingHBox"]
+layout_mode = 2
+text = "Damping:"
+
+[node name="Damping" type="SpinBox" parent="MarginContainer/ControllerVBox/DampingHBox"]
+layout_mode = 2
+size_flags_horizontal = 10
+tooltip_text = "This value sets how \"damped\" the spring motion
+is, in other words, how quickly it loses energy as it
+oscillates. A value of 0 will cause it to oscillate forever,
+and higher values slow it down faster."
+max_value = 10.0
+step = 0.001
+custom_arrow_step = 0.01
+
+[node name="MassHBox" type="HBoxContainer" parent="MarginContainer/ControllerVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ControllerVBox/MassHBox"]
+layout_mode = 2
+text = "Mass:"
+
+[node name="Mass" type="SpinBox" parent="MarginContainer/ControllerVBox/MassHBox"]
+layout_mode = 2
+size_flags_horizontal = 10
+tooltip_text = "This value sets how \"massive\" the spring motion
+is, in other words, how resistant it is to changes in
+movement. High values will make it tough to get
+going and vice versa."
+min_value = 1.0
+step = 0.001
+value = 1.0
+custom_arrow_step = 0.01
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ControllerVBox"]
+layout_mode = 2
+
+[node name="RemoveButton" type="Button" parent="MarginContainer/ControllerVBox"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "-"

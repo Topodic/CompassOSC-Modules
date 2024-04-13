@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdx1lvs6ynmm3"]
+
+[ext_resource type="PackedScene" uid="uid://blv2puopdyhtd" path="res://core/ModuleControlBase.tscn" id="1_dmgrp"]
+[ext_resource type="Script" path="res://modules/BasicMotionPhysics/SpringControlList.gd" id="2_p0buc"]
+
+[node name="SpringControlList" instance=ExtResource("1_dmgrp")]
+script = ExtResource("2_p0buc")
+control_nodepaths = Array[NodePath]([])
+control_collection_type = "Array"
+
+[node name="MarginContainer" type="MarginContainer" parent="." index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="Controllers" type="VBoxContainer" parent="MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="AddControllerButton" type="Button" parent="MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "+"

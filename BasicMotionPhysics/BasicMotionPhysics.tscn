@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://blhkrso320b5s"]
+
+[ext_resource type="Script" path="res://modules/BasicMotionPhysics/BasicMotionPhysics.gd" id="1_gfg5a"]
+[ext_resource type="PackedScene" uid="uid://cdx1lvs6ynmm3" path="res://modules/BasicMotionPhysics/SpringControlList.tscn" id="2_54xyr"]
+
+[node name="BasicMotionPhysics" type="Node"]
+script = ExtResource("1_gfg5a")
+module_name = "Basic Motion Physics"
+module_description = "Allows for basic control of animations via in-game movement, which should enable making much more natural movement for things such as tails, capes, and other such dangly wobbly bobbly bits."
+module_version = 1
+module_author = "Topodic"
+module_id = "topodic.basicphysics"
+module_namespace = "/phys"
+module_git_repo = "https://github.com/Topodic/CompassOSC-Modules"
+has_config = true
+
+[node name="SpringControlList" parent="." instance=ExtResource("2_54xyr")]
+visible = false

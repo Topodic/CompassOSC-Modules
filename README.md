@@ -9,3 +9,7 @@ Sends `true` or `false` messages when the player has equipped or unequipped a pi
 #### [The Blinker](https://github.com/Topodic/CompassOSC-Modules/raw/master/pcks/TheBlinker.pck)
 
 Randomly sends a `true` or `false` message to control a Toggle Layer called `osc:/is_blinking`. Allows configuring average number of blinks per minute, how many game ticks the blink lasts for, and how long between each blink.
+
+#### [The Blinker](https://github.com/Topodic/CompassOSC-Modules/raw/master/pcks/BasicMotionPhysics.pck)
+
+Sends a plethora of values between `-1.0` and `1.0` depending on in-game motion to addresses `osc:/phys/velocity` and `osc:/phys/acceleration`, followed by `frontback`, `rightleft`, `vertical`, `bodyYaw`, `headYaw`, and `headPitch`. Currently it's a basic simplified damped oscillator - a spring essentially, so this is useful for wobbly bits and things like tails or capes. Has configs for various values, and supports multiple simultaneous controllers with the addresses suffixed by your choice of identifier, for instance `osc:/phys/velocity/headYawCape` or `osc:/phys/acceleration/verticalTail`.
