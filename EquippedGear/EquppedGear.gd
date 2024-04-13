@@ -7,11 +7,15 @@ var head_prev = null
 var body_prev = null
 var legs_prev = null
 var feet_prev = null
+var main_hand_prev = null
+var off_hand_prev = null
 
 var head = null
 var body = null
 var legs = null
 var feet = null
+var main_hand = null
+var off_hand = null
 
 func _process(delta):
 	since_last += delta
@@ -53,6 +57,25 @@ func on_message_received(address, arguments):
 				if feet_prev:
 					send_message("feet/" + feet_prev, false)
 				send_message("feet/" + feet, true)
+		"/cpm/held_item/id":
+			var current = get_item_name(arguments[0])
+			should_send = current != main_hand or since_last >= 1.0
+			main_hand_prev = main_hand
+			main_hand = current
+			if should_send:
+				if main_hand_prev:
+					send_message("main_hand/" + main_hand_prev, false)
+				send_message("main_hand/" + main_hand, true)
+		"/cpm/off_hand/id":
+			var current = get_item_name(arguments[0])
+			should_send = current != off_hand or since_last >= 1.0
+			off_hand_prev = off_hand
+			off_hand = current
+			if should_send:
+				if off_hand_prev:
+					send_message("off_hand/" + off_hand_prev, false)
+				send_message("off_hand/" + off_hand, true)
+			
 		"/cpm/gameTime":
 			since_last = 0.0
 
