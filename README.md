@@ -4,7 +4,7 @@ This is a repo for official modules for [CompassOSC](https://github.com/Topodic/
 
 #### [Equipped Gear](https://github.com/Topodic/CompassOSC-Modules/raw/master/pcks/EquippedGear.pck)
 
-Sends `true` or `false` messages when the player has equipped or unequipped a piece of armor (head, body, legs, feet) at an address based on the gear equipped/unequipped and where it is equipped, ie `/wearing/feet/diamond_boots`, so your animations should be Toggle Layers named for the gear they should be turned on while wearing, for instance `osc:/wearing/head/chainmail_helmet`.
+Sends `true` or `false` messages when the player has equipped or unequipped a piece of armor (`head`, `body`, `legs`, `feet`, `main_hand`, `off_hand`) at an address based on the gear equipped/unequipped and where it is equipped, ie `/wearing/feet/diamond_boots`, so your animations should be Toggle Layers named for the gear they should be turned on while wearing, for instance `osc:/wearing/head/chainmail_helmet`.
 
 #### [The Blinker](https://github.com/Topodic/CompassOSC-Modules/raw/master/pcks/TheBlinker.pck)
 
