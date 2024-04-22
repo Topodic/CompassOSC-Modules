@@ -16,7 +16,8 @@ func add_controller(
 	identifier : String = str(controllers_list.get_child_count() + 1),
 	stiffness : float = 0.5,
 	damping : float = 0.2,
-	mass: float = 2.5
+	mass: float = 2.5,
+	is_active: bool = true
 	):
 	var node = base_controller.instantiate()
 	
@@ -24,8 +25,8 @@ func add_controller(
 	node.current_values.stiffness = stiffness
 	node.current_values.damping = damping
 	node.current_values.mass = mass
-	
-	
+	node.current_values.is_active = is_active
+
 	controllers_list.add_child(node)
 	controls.append(node)
 	node.initialize(module)

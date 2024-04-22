@@ -78,8 +78,9 @@ func initialize(client : OSCClient, manager : CPMOSCManager):
 			var stiffness = config.get_value(section, "Stiffness", 0.5)
 			var damping = config.get_value(section, "Damping", 0.2)
 			var mass = config.get_value(section, "Mass", 2.5)
+			var is_active = config.get_value(section, "Active", true)
 			
-			control_list.add_controller(identifier, stiffness, damping, mass)
+			control_list.add_controller(identifier, stiffness, damping, mass, is_active)
 	else:
 		control_list.add_controller()
 	
@@ -286,6 +287,7 @@ func _on_controller_values_changed(index, value):
 	config.set_value(str(index), "Stiffness", value.stiffness)
 	config.set_value(str(index), "Damping", value.damping)
 	config.set_value(str(index), "Mass", value.mass)
+	config.set_value(str(index), "Active", value.is_active)
 	save_configs()
 
 func _on_controller_deleted(index):
@@ -311,6 +313,8 @@ func _on_controller_added(index):
 
 func send_progress():
 	for c in controllers:
+		if !c.current_values.is_active:
+			continue
 		var id = c.current_values.identifier
 		var v = velocity.addresses
 		var a = acceleration.addresses
