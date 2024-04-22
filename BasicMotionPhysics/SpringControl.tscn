@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvqqje5s5ucco"]
+[gd_scene load_steps=3 format=3 uid="uid://dvqqje5s5ucco"]
 
 [ext_resource type="Script" path="res://modules/BasicMotionPhysics/SpringControl.gd" id="1_3oxsp"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1w8mn"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="SpringControl" type="PanelContainer"]
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1w8mn")
 script = ExtResource("1_3oxsp")
 control_nodepaths = Array[NodePath]([NodePath("MarginContainer/ControllerVBox/NamespaceHBox/Identifier"), NodePath("MarginContainer/ControllerVBox/StiffnessHBox/Stiffness"), NodePath("MarginContainer/ControllerVBox/DampingHBox/Damping"), NodePath("MarginContainer/ControllerVBox/MassHBox/Mass")])
 

@@ -313,7 +313,7 @@ func _on_controller_added(index):
 	}
 
 func _on_controls_reorganized():
-	# I do in fact hate how hacky this is
+	# I do in fact hate how hacky this is but it works
 	controllers = control_list.controls
 	for index in controllers.size():
 		_on_controller_values_changed(index, controllers[index].current_values)
