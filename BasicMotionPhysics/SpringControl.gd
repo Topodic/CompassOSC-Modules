@@ -2,6 +2,7 @@ class_name SpringControl
 extends ModuleControlBase
 
 signal values_changed(new_values)
+signal clicked(button)
 
 class ControllerValues:
 	var identifier : String
@@ -17,6 +18,11 @@ class ControllerValues:
 @onready var active_toggle : CheckBox = get_node("MarginContainer/ControllerVBox/HBoxContainer/ActiveToggle")
 
 var current_values = ControllerValues.new()
+
+func _gui_input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			clicked.emit(event.button_index)
 
 func post_initialize():
 	controls["Identifier"].connect("text_changed", _identifier_changed)

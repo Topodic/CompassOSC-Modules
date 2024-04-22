@@ -86,6 +86,7 @@ func initialize(client : OSCClient, manager : CPMOSCManager):
 	
 	control_list.controller_values_changed.connect(_on_controller_values_changed)
 	control_list.controller_deleted.connect(_on_controller_deleted)
+	control_list.controls_reorganized.connect(_on_controls_reorganized)
 
 func _physics_process(delta):
 	if !_initialized:
@@ -310,6 +311,13 @@ func _on_controller_added(index):
 		v = Progress.new(),
 		a = Progress.new()
 	}
+
+func _on_controls_reorganized():
+	# I do in fact hate how hacky this is
+	controllers = control_list.controls
+	for index in controllers.size():
+		_on_controller_values_changed(index, controllers[index].current_values)
+		
 
 func send_progress():
 	for c in controllers:
