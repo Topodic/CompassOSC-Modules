@@ -4,7 +4,9 @@ This is a repo for official modules for [CompassOSC](https://github.com/Topodic/
 
 #### [Equipped Gear](https://github.com/Topodic/CompassOSC-Modules/raw/master/pcks/EquippedGear.pck)
 
-Sends `true` or `false` messages when the player has equipped or unequipped a piece of armor or a held item (`head`, `body`, `legs`, `feet`, `main_hand`, `off_hand`) at an address based on the gear equipped/unequipped and where it is equipped, ie `/wearing/feet/diamond_boots`, so your animations should be Toggle Layers named for the gear they should be turned on while wearing, for instance `osc:/wearing/head/chainmail_helmet`. You can also include the namespace if you wish to or need to distinguish by mod like so `osc:/wearing/main_hand/minecraft/iron_sword`.
+Sends `true` or `false` messages when the player has equipped or unequipped a piece of armor or a held item (`head`, `body`, `legs`, `feet`, `main_hand`, `off_hand`) at an address based on the gear equipped/unequipped and where it is equipped. Your animations should be Toggle Layers named for the gear they should be turned on while wearing, for instance `osc:/wearing/head/chainmail_helmet`. You can also include the namespace if you wish to or need to distinguish by mod like so `osc:/wearing/main_hand/minecraft/iron_sword`.
+
+Additionally, you can utilize item tags to activate animations as well, both intrinsic tags within Minecraft itself and the custom tagging system as provided by CPM. For instance, you can make a generic animation for swords tagged with CPM's default `$cpm:item/swords` tag like so: `osc:/wearing/main_hand/tag/cpm/item/swords` 
 
 #### [The Blinker](https://github.com/Topodic/CompassOSC-Modules/raw/master/pcks/TheBlinker.pck)
 
