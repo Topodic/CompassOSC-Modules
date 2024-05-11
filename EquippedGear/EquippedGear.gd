@@ -48,20 +48,6 @@ var dirty_tags = {
 	"off_hand": false
 }
 
-var head_prev = null
-var body_prev = null
-var legs_prev = null
-var feet_prev = null
-var main_hand_prev = null
-var off_hand_prev = null
-
-var head = null
-var body = null
-var legs = null
-var feet = null
-var main_hand = null
-var off_hand = null
-
 func _process(delta):
 	since_last += delta
 func on_message_received(address, arguments):
