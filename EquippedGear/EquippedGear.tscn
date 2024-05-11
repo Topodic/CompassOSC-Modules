@@ -6,7 +6,7 @@
 script = ExtResource("1_m6684")
 module_name = "Equipped Gear"
 module_description = "Sends messages when equipping or unequipping pieces of gear."
-module_version = 2
+module_version = 3
 module_author = "Topodic"
 module_id = "topodic.equippedgear"
 module_namespace = "/wearing"
