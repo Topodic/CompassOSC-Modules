@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://40voqu5uaqww"]
+
+[ext_resource type="Script" path="res://modules/8WayWalk/8WayWalk.gd" id="1_4hspl"]
+
+[node name="8WayWalk" type="Node"]
+script = ExtResource("1_4hspl")
+module_name = "Simple 8-Way Walk"
+module_description = "Activates defined animations for 8-direction movement for walking, running, and sneaking."
+module_version = 1
+module_author = "Topodic"
+module_id = "topodic.8waywalk"
+module_namespace = "/"
+module_git_repo = "https://github.com/Topodic/CompassOSC-Modules"
